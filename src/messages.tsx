@@ -11,8 +11,8 @@ export const welcomeMessage = (
 
 export const helpMessage = () => {
   return (
-    <div className="p-4">
-      <div className="grid grid-cols-[auto,1fr] gap-4">
+    <div className="p-4 pb-0">
+      <div className="grid xs:grid-cols-[auto,1fr] xxs:grid-cols-1 gap-4">
         <div className="font-bold text-lime-400">about</div>
         <div className="text-left">Want to find out more about me?</div>
 
@@ -29,6 +29,9 @@ export const helpMessage = () => {
 
         <div className="font-bold text-lime-400">disco</div>
         <div className="text-left">Take a break from work</div>
+
+        <div className="font-bold text-lime-400">clear</div>
+        <div className="text-left">Clear the terminal</div>
       </div>
     </div>
   );
@@ -37,8 +40,8 @@ export const helpMessage = () => {
 export const aboutMe = () => {
   return (
     <div className="bg-gray-800 rounded-lg p-8 flex mt-6 flex-col items-center">
-      <div className="flex items-center mb-6">
-        <div className="w-40 h-40 rounded-lg bg-white overflow-hidden flex-shrink-0">
+      <div className="grid sm:grid sm:grid-cols-[auto,1fr] items-center mb-6 xxs:grid-cols-1 xxs:gap-6">
+        <div className="mx-auto sm:w-40 sm:h-40 xxs:w-[120px] xxs:h-[120px] md:w-[185px] md:h-[185px] lg:w-[210px] lg:h-[210px] rounded-lg bg-white overflow-hidden flex-shrink-0 items-center">
           <img
             src={profilePic}
             alt="Profile"
@@ -46,10 +49,12 @@ export const aboutMe = () => {
           />
         </div>
 
-        <div className="ml-8">
-          <h2 className="text-3xl font-bold text-lime-400 mb-4">About me</h2>
-          <p className="text-white">
-            Hi, I am Akma! I am a full stack software engineer based in San
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-lime-400 mb-4 xxs:text-center md:text-4xl lg:text-5xl">
+            About me
+          </h2>
+          <p className="mx-auto text-white xxs:text-justify xxs:p-2 md:text-xl lg:text-2xl">
+            Hi, I am Akma! I'm a full stack software engineer based in San
             Francisco. I like to create fun, practical coding experiences and am
             a huge boba, art, and anime fan. Check out some fun facts below ^_^
           </p>

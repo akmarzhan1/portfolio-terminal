@@ -1,8 +1,8 @@
 import { ReactTerminal } from "react-terminal";
 import { aboutMe, helpMessage, welcomeMessage } from "./messages";
 
-// TODO: resize the terminal
 // TODO: try it out in different sizes and adjust the font and etc
+// TODO: make the website dynamically resizable
 
 function App() {
   const commands = {

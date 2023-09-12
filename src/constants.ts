@@ -43,4 +43,6 @@ export const FUN_FACTS = [
   { prompt: "LeetCode problems I solved", number: 377 },
   { prompt: "Countries I studied in", number: 7 },
   { prompt: "Bobas I've consumed", number: 8736 },
+  { prompt: "Letters in my name", number: 15 },
+  { prompt: "Anime I watched", number: 736 },
 ];
