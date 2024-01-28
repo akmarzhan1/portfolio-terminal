@@ -1,3 +1,82 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/9a/512x512_Dissolve_Noise_Texture.png");
+  background-size: 256px;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes rainbowAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.rainbow-text:hover {
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    #ef4444,
+    #f59e0b,
+    #84cc16,
+    #10b981,
+    #06b6d4,
+    #3b82f6,
+    #3b82f6,
+    #d946ef,
+    #f43f5e
+  );
+  background-size: 200% 200%;
+  animation: rainbowAnimation 4s infinite;
+  z-index: 22;
+}
+
+/* Add this style to gradually transition back to white when not hovering */
+.group:not(:hover) .rainbow-text {
+  color: #eae0da;
+  background-image: none; /* Reset the background image */
+}
+
+.cursor-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #000; /* Center dot color */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* On top of outer circle */
+}
+
+.cursor-outer-circle {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #000; /* Outer circle border color */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Behind center dot */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

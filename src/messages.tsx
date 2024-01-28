@@ -50,7 +50,7 @@ export const aboutMe = () => {
         </div>
 
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-lime-400 mb-4 xxs:text-center md:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold text-lime-400 mb-4 xxs:text-center lg:text-4xl">
             About me
           </h2>
           <p className="mx-auto text-white xxs:text-justify xxs:p-2 md:text-xl lg:text-2xl">
