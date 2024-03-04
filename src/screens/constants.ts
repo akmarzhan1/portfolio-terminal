@@ -176,16 +176,78 @@ export enum AllowedPhotoType {
   nothing = "",
 }
 
-export const workToPlace: { [key in keyof typeof AllowedPhotoType]: string } = {
-  carepod: "forward",
-  lexical: "meta",
-  blockchain: "inka finance",
-  timero: "web project",
-  cassandra: "blog post: ds",
-  facerec: "blog post: ml",
-  style: "blog post: ml",
-  suggestme: "web project",
-  nothing: "",
+export const workToTags: {
+  [key in keyof typeof AllowedPhotoType]: [string, string] | [string];
+} = {
+  carepod: ["healthcare", "full stack"],
+  lexical: ["frontend", "text editor"],
+  blockchain: ["finance"],
+  timero: ["web", "full stack"],
+  cassandra: ["blog post", "distributed system"],
+  facerec: ["ml", "research"],
+  style: ["blog post", "ml"],
+  suggestme: ["web", "full stack"],
+  nothing: [""],
+};
+
+export const workToTech: {
+  [key in keyof typeof AllowedPhotoType]: string[];
+} = {
+  carepod: ["ts", "go", "react", "aws"],
+  lexical: ["ts", "react"],
+  blockchain: [
+    "react",
+    "js",
+    "solidity",
+    "web3",
+    "metamask (smart contracts)",
+    "ethereum (abi)",
+    "heroku",
+  ],
+  timero: [
+    "js",
+    "flask",
+    "tailwind",
+    "postgresql",
+    "bootstrap",
+    "rest api",
+    "jquery",
+    "sqlalchemy",
+    "chart.js",
+    "html5",
+    "netlify",
+    "jinja2",
+  ],
+  cassandra: ["databases", "docker", "shell", "blog"],
+  facerec: ["python", "cv2", "vggface"],
+  style: ["python", "pytorch", "cnn", "gan", "vgg19", "pandas"],
+  suggestme: [
+    "flask",
+    "jinja2",
+    "sqlaclhemy",
+    "docker",
+    "ci/cd",
+    "scraping",
+    "css/html/js",
+  ],
+  nothing: [""],
+};
+
+const some =
+  "Bls vskldjfksdjfklsjzdfjsldkjfklsjdflksd sdkfnsdlkfjlksdf dskfjnlsdknf sakdfjslkd jflksj nskjdnkjasdjknkjdbxfjs sbjbskj bls vskldjfksdjfklsjzdfjsldkjfklsjdflksd sdkfnsdlkfjlksdf dskfjnlsdknf sakdfjslkd jflksj nskjdnkjasdjknkjdbxfjs sbjbskj";
+
+export const descriptions: {
+  [key in keyof typeof AllowedPhotoType]: string;
+} = {
+  carepod: some,
+  lexical: some,
+  blockchain: some,
+  timero: some,
+  cassandra: some,
+  facerec: some,
+  style: some,
+  suggestme: some,
+  nothing: some,
 };
 
 export const workToPath: { [key in keyof typeof AllowedPhotoType]: string } = {
@@ -197,5 +259,17 @@ export const workToPath: { [key in keyof typeof AllowedPhotoType]: string } = {
   facerec: kpop,
   style: model,
   suggestme: suggest,
+  nothing: "",
+};
+
+export const workToName: { [key in keyof typeof AllowedPhotoType]: string } = {
+  carepod: "Future of Healthcare",
+  lexical: "Meta's Ultimate text-editor",
+  blockchain: "Decentralized Bank in Kazakhstan",
+  timero: "Time Management tool",
+  cassandra: "Cassandra Tutorial",
+  facerec: "Face Recognition tools",
+  style: "Style Transfer using GANs and CNNs",
+  suggestme: "Instagram Analytics and Suggestions Tool",
   nothing: "",
 };

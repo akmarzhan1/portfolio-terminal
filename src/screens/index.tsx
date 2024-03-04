@@ -12,17 +12,15 @@ import {
 } from "./constants";
 import AnimatedPoint from "../components/AnimatedPoint";
 import "../fonts.css"; // Import the font CSS file
-import Experience, { AllowedPhotoType } from "../components/Experience";
+import Experience from "../components/Experience";
 import { AnimatePresence, motion } from "framer-motion";
-import ProjectDisplay from "../components/ProjectDisplay";
+import AboutMe from "../components/AboutMe";
 
 const MainScreen: React.FC = () => {
   const [dataset, setDataset] = useState(originalDataset);
   const [showIntro, setShowIntro] = useState(true);
   const [showWork, setShowWork] = useState(false);
-  const [showProjectDisplay, setShowProjectDisplay] = useState(false);
-  const [currentProject, setCurrentProject] =
-    useState<keyof typeof AllowedPhotoType>("nothing");
+  const [showAboutMe, setShowAboutMe] = useState(false);
 
   const [dataState, setDataState] = useState<DatasetName>("scatter");
   const scatterMap: { [key in DatasetName]: DatasetType[] } = {
@@ -68,6 +66,10 @@ const MainScreen: React.FC = () => {
                 setShowIntro(false);
                 setShowWork(true);
               }}
+              onSeeAboutMe={() => {
+                setShowIntro(false);
+                setShowAboutMe(true);
+              }}
             />
           </motion.div>
         )}
@@ -89,32 +91,27 @@ const MainScreen: React.FC = () => {
             exit={{ opacity: 0 }}
             style={{ zIndex: 20 }}
           >
-            <Experience
-              onClick={(project: keyof typeof AllowedPhotoType) => {
-                setCurrentProject(project);
-                setShowWork(false);
-                setShowProjectDisplay(true);
-              }}
-            />
+            <Experience />
           </motion.div>
         )}
       </AnimatePresence>
+
       <AnimatePresence>
-        {showProjectDisplay && (
+        {showAboutMe && (
           <motion.div
-            initial={{ opacity: 0, y: 600 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -400 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{
               duration: 1,
               type: "spring",
               stiffness: 100,
               damping: 10,
-              delay: 1,
+              delay: 0.5,
             }}
             exit={{ opacity: 0 }}
             style={{ zIndex: 20 }}
           >
-            <ProjectDisplay currentProject={currentProject} />
+            <AboutMe />
           </motion.div>
         )}
       </AnimatePresence>
