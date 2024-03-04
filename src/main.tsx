@@ -1,13 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import App from "./App.tsx";
 import "./index.css";
-import { TerminalContextProvider } from "react-terminal";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <TerminalContextProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </TerminalContextProvider>
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
 );
