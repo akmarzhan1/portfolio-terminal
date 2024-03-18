@@ -5,7 +5,8 @@ import lexical from "../assets/lexical.jpeg";
 import suggest from "../assets/suggest.png";
 import timero from "../assets/timero.png";
 import cassandra from "../assets/cassandra.jpg";
-import forward from "../assets/forward.jpg";
+import bert from "../assets/bert.jpeg";
+import blockchain from "../assets/blockchain.png";
 
 const colors = [
   "#BE123C",
@@ -173,19 +174,21 @@ export enum AllowedPhotoType {
   facerec = "FaceRec",
   style = "StyleTransfer",
   suggestme = "SuggestMe",
+  bert = "BERT",
   nothing = "",
 }
 
 export const workToTags: {
-  [key in keyof typeof AllowedPhotoType]: [string, string] | [string];
+  [key in keyof typeof AllowedPhotoType]: string[];
 } = {
   carepod: ["healthcare", "full stack"],
   lexical: ["frontend", "text editor"],
   blockchain: ["finance"],
   timero: ["web", "full stack"],
-  cassandra: ["blog post", "distributed system"],
+  cassandra: ["blog post", "ds"],
   facerec: ["ml", "research"],
   style: ["blog post", "ml"],
+  bert: ["blog post", "ml"],
   suggestme: ["web", "full stack"],
   nothing: [""],
 };
@@ -221,6 +224,7 @@ export const workToTech: {
   cassandra: ["databases", "docker", "shell", "blog"],
   facerec: ["python", "cv2", "vggface"],
   style: ["python", "pytorch", "cnn", "gan", "vgg19", "pandas"],
+  bert: ["bert (sequence classification)", "pytorch", "pandas"],
   suggestme: [
     "flask",
     "jinja2",
@@ -233,31 +237,59 @@ export const workToTech: {
   nothing: [""],
 };
 
-const some =
-  "Bls vskldjfksdjfklsjzdfjsldkjfklsjdflksd sdkfnsdlkfjlksdf dskfjnlsdknf sakdfjslkd jflksj nskjdnkjasdjknkjdbxfjs sbjbskj bls vskldjfksdjfklsjzdfjsldkjfklsjdflksd sdkfnsdlkfjlksdf dskfjnlsdknf sakdfjslkd jflksj nskjdnkjasdjknkjdbxfjs sbjbskj";
-
 export const descriptions: {
   [key in keyof typeof AllowedPhotoType]: string;
 } = {
-  carepod: some,
-  lexical: some,
-  blockchain: some,
-  timero: some,
-  cassandra: some,
-  facerec: some,
-  style: some,
-  suggestme: some,
-  nothing: some,
+  carepod:
+    "With the mission of providing healthcare for billions for free, in the last 2 years I have been working on full stack projects ranging from building entire backend services all the way to creating fascinating framer-motion animations on the frontend. Check out more about the CarePods and other cool things I’ve been working on below.",
+  lexical:
+    "I have always had a fascination with various text editors as I am a huge fan of taking notes and formatting them nicely (thanks to bullet journaling in high school) as well as teaching people new concepts through cool tutorials in blogs. That’s why creating demos for Meta’s most prominent text editor framework has been such a blast as I had a chance to not only improve my frontend skills by pushing the limits of frontend but also share my understanding with the world in the form of succinct tutorials explaining the usage of each individual component. Check out my sandboxes below.",
+  blockchain:
+    "My first software engineering internship where I got to build Kazakhstan’s first decentralized bank application. I learned so much fun stack like web3, Metamask, Solidity and Ethereum and was able to use JavaScript as a frontend engineer to build blockchain wallets with various flexible functionality. Check them out below.",
+  timero:
+    "As my Capstone project I chose to create a web app I always needed and never was patient enough to follow - the timer app. With a nice twist, I gamified it a little and built in a mix of todo list, stats, dashboards and incentives in the form of an ability to play mini-games inside the web app. Check it out here.",
+  cassandra:
+    "My first time working with distributed systems and a database like Cassandra has definitely been fun. As I was learning about how everything works and what steps to take to run the clusters on my personal machine, I figured there was no extensive blog that covered all parts of understanding, spinning up, running, working with and testing the database, which is whyI decided to take matters in my own hands and create a nice tutorial blog that will go over most nitty gritty details of introducing yourself to Cassandra. Check out my Notion post here.",
+  facerec:
+    "I have built a machine learning add-on that can recognize and highlight the faces of people, which helps tell them apart from each other in a video format in real time. I have always wanted to code something this sophisticated and create such a powerful tool that just needs couple images of the people. For example, I tried it on BTS and fed the model 15 pictures of each member and it had an 80% accuracy in the video for Black Swan. Check out the paper here.",
+  style:
+    "I am really into art so I wanted to try doing style transfer using GANs and CNNs to make some of my pictures seem like they have been drawn by famous artists. Check it out here.",
+  bert: "I like watching movies but sometimes I don't like reading the reviews and deciding whether the reviewer liked the movie or not. For this task, I decided it was more fun to do sentiment classification by fine-tuning the existing BERT model with the Movie Reviews dataset on Kaggle. Check out how I did it below.",
+  suggestme:
+    "One of my first software engineering projects that focused on building a personalized Instagram dashboard that could help creators understand their own stats as well as the current trends within followers. Check it out here.  ",
+  nothing: "",
 };
+
+export const webLinks: { [key in keyof typeof AllowedPhotoType]?: string } = {
+  carepod: "https://goforward.com/carepod-announce",
+  lexical: "https://codesandbox.io/u/akmarzhan1",
+  blockchain: "https://uk.linkedin.com/company/inka-finance",
+  cassandra:
+    "https://akmarzhan.notion.site/Cassandra-who-or-a-short-introduction-to-Apache-Cassandra-using-Docker-798d343c41c84dddbb2e52873a04e1b0",
+  bert: "https://drive.google.com/file/d/1X3jDNhsfgVxTpn7ZmOK1ifQO9Q4bScSR/view",
+  style:
+    "https://drive.google.com/file/d/1sk7uUkuHolFaWc6JiNk_HGfexIFiczBJ/view?usp=sharing",
+  nothing: "",
+};
+
+export const githubLinks: { [key in keyof typeof AllowedPhotoType]?: string } =
+  {
+    lexical: "https://github.com/facebook/lexical",
+    timero: "https://github.com/akmarzhan1/capstone-akma",
+    facerec: "https://github.com/akmarzhan1/kpop-recognition-tool",
+    suggestme: "https://github.com/akmarzhan1/content-suggestion",
+    nothing: "",
+  };
 
 export const workToPath: { [key in keyof typeof AllowedPhotoType]: string } = {
   carepod: carepodPic,
   lexical: lexical,
-  blockchain: forward,
+  blockchain: blockchain,
   timero: timero,
   cassandra: cassandra,
   facerec: kpop,
   style: model,
+  bert: bert,
   suggestme: suggest,
   nothing: "",
 };
@@ -271,5 +303,6 @@ export const workToName: { [key in keyof typeof AllowedPhotoType]: string } = {
   facerec: "Face Recognition tools",
   style: "Style Transfer using GANs and CNNs",
   suggestme: "Instagram Analytics and Suggestions Tool",
+  bert: "BERT Sentiment Analysis",
   nothing: "",
 };

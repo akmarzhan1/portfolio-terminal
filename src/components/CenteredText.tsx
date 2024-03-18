@@ -11,8 +11,8 @@ const CenteredText = ({
 }) => {
   return (
     <div className="flex items-center justify-center">
-      <div className=" mx-auto text-center max-w-screen-md">
-        <h1 className="font-custom flex leading-10 text-[#EAE0DA] text-center sm:leading-none text-6xl sm:text-8xl text-white hover:brightness-110 transition-all duration-300">
+      <div className="mx-auto text-center max-w-screen-md">
+        <h1 className="mx-auto font-custom flex justify-center lg:mb-0 mb-4 leading-10 text-[#EAE0DA] text-center sm:leading-none text-6xl sm:text-8xl text-white hover:brightness-110 transition-all duration-300">
           <span className="inline md:block">hi, I'm</span>
           <span
             className="rainbow-text relative ml-4 bg-clip-text text-white md:inline-block"
@@ -23,7 +23,7 @@ const CenteredText = ({
           </span>
         </h1>
         <h1 className="font-basic leading-10 text-[#EAE0DA] text-center sm:leading-none text-[36px] sm:text-[24px] text-white">
-          <span className="inline md:block">Full-stack Software Engineer</span>
+          <span className="inline md:block">Full-stack SWE</span>
         </h1>
         <div className="flex font-basic text-[16px] justify-center items-center mt-6">
           <button className="relative overflow-hidden focus:outline-none group">

@@ -10,8 +10,10 @@ export default {
       },
       screens: {
         xxs: "0px",
-        xs: "380px",
+        xs: "400px",
         s: "500px",
+        md: "700px",
+        lg: "920px",
       },
     },
   },
