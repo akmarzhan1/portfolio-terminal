@@ -95,7 +95,7 @@ const MainScreen: React.FC = () => {
         }`}
       >
         <div className="absolute top-10" style={{ zIndex: 25 }}>
-          <Navigation onPress={setNavigation} />
+          <Navigation currentNavigation={navigation} onPress={setNavigation} />
         </div>
         <AnimatedCursor
           innerSize={8}
@@ -112,7 +112,7 @@ const MainScreen: React.FC = () => {
               initial={initialAnimation}
               animate={fadeInAnimation}
               exit={fadeOutAnimation}
-              style={{ position: "absolute" }}
+              style={{ position: "absolute", zIndex: 1 }}
             >
               <CenteredText
                 onPress={setDataState}

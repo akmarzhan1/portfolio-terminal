@@ -1,10 +1,11 @@
-import { useState } from "react";
 import { LinksType, NavigationType } from "../screens/types";
 
 const Navigation = ({
   onPress,
+  currentNavigation,
 }: {
   onPress: (page: NavigationType) => void;
+  currentNavigation: NavigationType;
 }) => {
   const links: LinksType[] = [
     {
@@ -112,8 +113,6 @@ const Navigation = ({
     },
   ];
 
-  const [activeLink, setActiveLink] = useState<NavigationType>("home");
-
   return (
     <div className="relative flex items-center px-2 overflow-hidden bg-transparent border-[1.5px] border-white h-16 rounded-2xl">
       <nav className="flex items-center justify-center gap-2">
@@ -121,7 +120,6 @@ const Navigation = ({
           <span
             onMouseEnter={() => console.log("wh")}
             onClick={() => {
-              setActiveLink(link.title);
               onPress(link.title);
             }}
             className="grid w-16 h-16 grid-cols-1 grid-rows-1"
@@ -134,7 +132,7 @@ const Navigation = ({
             ></div>
             <div
               className={`col-[1/1] row-[1/1] flex items-center justify-center w-16 h-16 transition-opacity duration-300 ${
-                activeLink === link.title
+                currentNavigation === link.title
                   ? "opacity-100 pointer-events-auto"
                   : "opacity-0 pointer-events-none"
               }`}
@@ -146,9 +144,9 @@ const Navigation = ({
 
       <div
         className={`absolute w-6 h-8 transition-all duration-300 bg-[#adff00] rounded-full -bottom-4 left-7 hover:bg-white ${
-          activeLink == "about me"
+          currentNavigation == "about me"
             ? "left-[100px]"
-            : activeLink == "work"
+            : currentNavigation == "work"
             ? "left-[172px]"
             : ""
         }`}

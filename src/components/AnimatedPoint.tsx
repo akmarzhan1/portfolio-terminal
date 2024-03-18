@@ -141,3 +141,5 @@ export const customDamping = (progress: number) => {
 };
 
 export default AnimatedPoint;
+
+// add three portfolio
